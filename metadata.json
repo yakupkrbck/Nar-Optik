@@ -1,6 +1,0 @@
-{
-  "name": "Nar Optik Lens | Lens ve Gözlük Seçim Rehberi",
-  "description": "Müşteriler için mağaza içi ve mobil seçim rehberi. Optik camlar, optik ve güneş gözlükleri, numaralı ve renkli lensler, aksesuarlar ve WhatsApp bilgi hattı.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
