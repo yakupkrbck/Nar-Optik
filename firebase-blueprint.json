@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "Category": {
+      "title": "Category",
+      "description": "Store category with subcategories for catalog navigation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "emoji": { "type": "string" },
+        "isCustom": { "type": "boolean" },
+        "subcategories": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "label"]
+    },
+    "CatalogItem": {
+      "title": "CatalogItem",
+      "description": "Eyewear, lens or optical accessory item in the catalog",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "category": { "type": "string" },
+        "subcategory": { "type": "string" },
+        "name": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "code": { "type": "string" },
+        "specs": { "type": "string" },
+        "details": { "type": "string" },
+        "image": { "type": "string" },
+        "badge": { "type": "string" },
+        "price": { "type": "string" },
+        "campaignPrice": { "type": "string" },
+        "isEyewear": { "type": "boolean" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "category", "name"]
+    },
+    "AdminConfig": {
+      "title": "AdminConfig",
+      "description": "Global store configuration and admin settings",
+      "type": "object",
+      "properties": {
+        "adminEmail": { "type": "string" },
+        "storeName": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["adminEmail"]
+    }
+  },
+  "firestore": {
+    "/categories/{categoryId}": {
+      "schema": "Category",
+      "description": "Public catalog categories created or managed by Nar Optik"
+    },
+    "/catalog_items/{itemId}": {
+      "schema": "CatalogItem",
+      "description": "Product catalog items with pricing, specs and images"
+    },
+    "/admin_config/{configId}": {
+      "schema": "AdminConfig",
+      "description": "Store configuration and admin metadata"
+    }
+  }
+}
